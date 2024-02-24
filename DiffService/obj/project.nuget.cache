@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kD46hJpGdNL9Sx9HoJokaRaVEBkIwS7hUb3ghAyrM89JDV4eoqT8ZGPI6hgFciFc9D2JiiIG8JHeBeRcIbf8OA==",
+  "dgSpecHash": "nIikNtSJqne6bPRoBWsGMiy/2TOAdaQp/8K4WMiW8oto2RQoWJUA68vcXtoVYQyYIQBg3ydgHu1IpeQnv/kXLA==",
   "success": true,
   "projectFilePath": "D:\\descartes\\DiffService\\DiffService\\DiffService.csproj",
   "expectedPackageFiles": [
@@ -14,11 +14,14 @@
     "C:\\Users\\darko.zvezdanovic\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
     "C:\\Users\\darko.zvezdanovic\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
     "C:\\Users\\darko.zvezdanovic\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
+    "C:\\Users\\darko.zvezdanovic\\.nuget\\packages\\xunit\\2.7.0\\xunit.2.7.0.nupkg.sha512",
     "C:\\Users\\darko.zvezdanovic\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
+    "C:\\Users\\darko.zvezdanovic\\.nuget\\packages\\xunit.analyzers\\1.11.0\\xunit.analyzers.1.11.0.nupkg.sha512",
     "C:\\Users\\darko.zvezdanovic\\.nuget\\packages\\xunit.assert\\2.7.0\\xunit.assert.2.7.0.nupkg.sha512",
     "C:\\Users\\darko.zvezdanovic\\.nuget\\packages\\xunit.core\\2.7.0\\xunit.core.2.7.0.nupkg.sha512",
     "C:\\Users\\darko.zvezdanovic\\.nuget\\packages\\xunit.extensibility.core\\2.7.0\\xunit.extensibility.core.2.7.0.nupkg.sha512",
-    "C:\\Users\\darko.zvezdanovic\\.nuget\\packages\\xunit.extensibility.execution\\2.7.0\\xunit.extensibility.execution.2.7.0.nupkg.sha512"
+    "C:\\Users\\darko.zvezdanovic\\.nuget\\packages\\xunit.extensibility.execution\\2.7.0\\xunit.extensibility.execution.2.7.0.nupkg.sha512",
+    "C:\\Users\\darko.zvezdanovic\\.nuget\\packages\\xunit.runner.console\\2.7.0\\xunit.runner.console.2.7.0.nupkg.sha512"
   ],
   "logs": []
 }
