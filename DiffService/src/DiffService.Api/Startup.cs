@@ -14,8 +14,6 @@ namespace DiffService.src.DiffService.Api
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            Log.Logger = new LoggerConfiguration()
-            .CreateLogger();
         }
 
         public void ConfigureServices(IServiceCollection services)
