@@ -12,7 +12,6 @@ namespace DiffService.src.DiffService.Api
     public class DiffController : ControllerBase
     {
         private static readonly Dictionary<string, (byte[], byte[])> dataStore;
-        private readonly ILogger<DiffController> _logger;
 
         static DiffController()
         {
@@ -34,13 +33,11 @@ namespace DiffService.src.DiffService.Api
                 if (!dataStore.TryGetValue(ID, out (byte[], byte[]) value))
                 {
                     dataStore.Add(ID, (data, null));
-                    //_logger.LogInformation($"Adding key {ID} to dataStore");
                     dataStore[ID] = (null, data);
                 }
                 else
                 {
                     dataStore[ID] = (value.Item1, data);
-                    //_logger.LogInformation($"Key {ID} already exists in dataStore. Updating value.");
                 }
 
                 return StatusCode(201, "Created");
@@ -65,14 +62,12 @@ namespace DiffService.src.DiffService.Api
                 byte[] data = Convert.FromBase64String(dataString);
                 if (!dataStore.TryGetValue(ID, out (byte[], byte[]) value))
                 {
-                    //_logger.LogInformation($"Adding key {ID} to dataStore");
                     dataStore.Add(ID, (null, data));
                     dataStore[ID] = (null, data);
                 }
                 else
                 {
                     dataStore[ID] = (value.Item2, data);
-                    //_logger.LogInformation($"Key {ID} already exists in dataStore. Updating value.");
                 }
 
                 return StatusCode(201,"Created");
@@ -96,14 +91,14 @@ namespace DiffService.src.DiffService.Api
                 var rightData = value.Item2;
 
                 if (leftData == null || rightData == null)
-                    return BadRequest(new { error = "Left or right data is missing" });
+                    return StatusCode(400);
 
                 if (leftData.Length != rightData.Length)
-                    return Ok(new { message = "SizeDoNotMatch" });
+                    return Ok(new { diffResultType = "SizeDoNotMatch" });
 
-                var differences = new List<Difference>();
+                var diffs = new List<Difference>();
                 int length = 0;
-                int offset = -1; // Initialize offset to -1 to handle differences at the beginning of the data
+                int offset = -1; // Initialize offset to -1 to handle diffs at the beginning of the data
 
                 for (int i = 0; i < leftData.Length; i++)
                 {
@@ -111,7 +106,7 @@ namespace DiffService.src.DiffService.Api
                     {
                         if (length == 0)
                         {
-                            // Start of a new difference
+                            // Start of a new diffs
                             offset = i;
                         }
                         length++;
@@ -121,7 +116,7 @@ namespace DiffService.src.DiffService.Api
                         if (length > 0)
                         {
                             // End of a difference
-                            differences.Add(new Difference { Offset = offset, Length = length });
+                            diffs.Add(new Difference { Offset = offset, Length = length });
                             length = 0;
                         }
                         offset = -1; // Reset offset
@@ -131,16 +126,16 @@ namespace DiffService.src.DiffService.Api
                 if (length > 0)
                 {
                     // If there's a difference at the end of the data
-                    differences.Add(new Difference { Offset = offset, Length = length });
+                    diffs.Add(new Difference { Offset = offset, Length = length });
                 }
 
-                if (differences.Count == 0)
+                if (diffs.Count == 0)
                 {
                     // If there are no differences
-                    return Ok(new { message = "Equals" });
+                    return Ok(new { diffResultType = "Equals" });
                 }
 
-                return Ok(new { message = "ContentDoNotMatch", differences });
+                return Ok(new { diffResultType = "ContentDoNotMatch", diffs });
             }
             catch (Exception e)
             {
