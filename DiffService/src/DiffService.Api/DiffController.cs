@@ -1,9 +1,5 @@
 ﻿using DiffService.src.models;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-using System.Xml;
-using Serilog;
 
 namespace DiffService.src.DiffService.Api
 {
@@ -70,11 +66,11 @@ namespace DiffService.src.DiffService.Api
                     dataStore[ID] = (value.Item2, data);
                 }
 
-                return StatusCode(201,"Created");
+                return StatusCode(201);
             }
             catch (Exception e)
             {
-                return BadRequest(new { error = e.Message });
+                return BadRequest();
             }
         }
 
@@ -85,7 +81,7 @@ namespace DiffService.src.DiffService.Api
             try
             {
                 if (!dataStore.TryGetValue(ID, out (byte[], byte[]) value))
-                    return NotFound(new { error = "ID not found" });
+                    return NotFound();
 
                 var leftData = value.Item1;
                 var rightData = value.Item2;

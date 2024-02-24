@@ -6,7 +6,7 @@ using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 
-namespace DiffService.src.DiffService.Api
+namespace DiffService
 {
     public class Startup
     {
@@ -20,10 +20,10 @@ namespace DiffService.src.DiffService.Api
         {
             services.AddControllers();
         }
-        
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if(env.IsDevelopment())
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
