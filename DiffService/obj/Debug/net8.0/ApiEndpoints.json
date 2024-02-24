@@ -1,0 +1,60 @@
+[
+  {
+    "ContainingType": "DiffService.src.DiffService.Api.DiffController",
+    "Method": "Diff",
+    "RelativePath": "v1/diff/{ID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ID",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DiffService.src.DiffService.Api.DiffController",
+    "Method": "Left",
+    "RelativePath": "v1/diff/{ID}/left",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ID",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "diffData",
+        "Type": "DiffService.src.models.DiffData",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DiffService.src.DiffService.Api.DiffController",
+    "Method": "Right",
+    "RelativePath": "v1/diff/{ID}/right",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ID",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "diffData",
+        "Type": "DiffService.src.models.DiffData",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
