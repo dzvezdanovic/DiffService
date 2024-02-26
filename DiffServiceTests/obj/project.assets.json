@@ -3018,19 +3018,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\darko.zvezdanovic\\.nuget\\packages\\": {}
+    "C:\\Users\\DarkoZvezdanovic\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\descartes\\DiffService\\DiffServiceTests\\DiffServiceTests.csproj",
+      "projectUniqueName": "D:\\descartes\\DiffServiceTests\\DiffServiceTests.csproj",
       "projectName": "DiffServiceTests",
-      "projectPath": "D:\\descartes\\DiffService\\DiffServiceTests\\DiffServiceTests.csproj",
-      "packagesPath": "C:\\Users\\darko.zvezdanovic\\.nuget\\packages\\",
-      "outputPath": "D:\\descartes\\DiffService\\DiffServiceTests\\obj\\",
+      "projectPath": "D:\\descartes\\DiffServiceTests\\DiffServiceTests.csproj",
+      "packagesPath": "C:\\Users\\DarkoZvezdanovic\\.nuget\\packages\\",
+      "outputPath": "D:\\descartes\\DiffServiceTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\darko.zvezdanovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DarkoZvezdanovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3044,8 +3044,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\descartes\\DiffService\\DiffService\\DiffService.csproj": {
-              "projectPath": "D:\\descartes\\DiffService\\DiffService\\DiffService.csproj"
+            "D:\\descartes\\DiffService\\DiffService.csproj": {
+              "projectPath": "D:\\descartes\\DiffService\\DiffService.csproj"
             }
           }
         }
@@ -3054,11 +3054,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3104,7 +3099,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
