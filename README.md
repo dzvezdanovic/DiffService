@@ -57,6 +57,7 @@ POST v1/diff/<ID>/right
 ### Diff Endpoint
 
 Retrieve comparison results using the Diff Endpoint:
+GET v1/diff/<ID>
 ```json
 {
   "result": "equal",
@@ -67,6 +68,6 @@ Retrieve comparison results using the Diff Endpoint:
 We welcome contributions from the community! If you find any issues or have suggestions for improvements, please feel free to submit a pull request or open an issue on GitHub.
 
 ##Contact
-For any inquiries or support, please contact us at dzvezdanovic@outlook.com.
+For any inquiries or support, please contact me at dzvezdanovic@outlook.com.
 
 Thank you for reading this!
