@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DiffService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d4ddf2b75ace99e246271be37a685d7b29c4985")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b69228c0412724fcdb0144dc93c3d86f30bde96")]
 [assembly: System.Reflection.AssemblyProductAttribute("DiffService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DiffService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

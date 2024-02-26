@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\descartes\\DiffService\\DiffService\\DiffService.csproj": {}
+    "D:\\descartes\\DiffService\\DiffService.csproj": {}
   },
   "projects": {
-    "D:\\descartes\\DiffService\\DiffService\\DiffService.csproj": {
+    "D:\\descartes\\DiffService\\DiffService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\descartes\\DiffService\\DiffService\\DiffService.csproj",
+        "projectUniqueName": "D:\\descartes\\DiffService\\DiffService.csproj",
         "projectName": "DiffService",
-        "projectPath": "D:\\descartes\\DiffService\\DiffService\\DiffService.csproj",
-        "packagesPath": "C:\\Users\\darko.zvezdanovic\\.nuget\\packages\\",
-        "outputPath": "D:\\descartes\\DiffService\\DiffService\\obj\\",
+        "projectPath": "D:\\descartes\\DiffService\\DiffService.csproj",
+        "packagesPath": "C:\\Users\\DarkoZvezdanovic\\.nuget\\packages\\",
+        "outputPath": "D:\\descartes\\DiffService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\darko.zvezdanovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DarkoZvezdanovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -85,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
