@@ -1,0 +1,30 @@
+﻿name: Build & Deploy .NET app
+
+on:
+push:
+branches:
+- main
+- master
+- feature
+
+jobs:
+build:
+runs-on: ubuntu-latest
+steps:
+
+- name: Checkout code
+  uses: actions/checkout@v3
+
+- name: Setup .NET
+  uses: actions/setup-dotnet@v3
+  with:
+  dotnet-version: 8.0.x
+
+- name: Unit Tests
+  run: dotnet test --file DiffServiceTests.cs
+
+- name: Build
+  run: dotnet build WebApi --configuration Release --no-restore
+
+- name: Test
+  run: dotnet test WebApi --configuration Release --no-build

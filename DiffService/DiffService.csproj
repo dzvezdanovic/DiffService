@@ -14,4 +14,8 @@
     <PackageReference Include="Xunit.DependencyInjection" Version="8.9.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include=".actions\workflows\main.yml" />
+  </ItemGroup>
+
 </Project>
