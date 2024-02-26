@@ -1,5 +1,11 @@
-﻿################################################################################
+################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
 /.vs/DiffService
+DiffService/bin/Debug/net8.0/Xunit.Microsoft.DependencyInjection.dll
+DiffServiceTests/bin/Debug/net8.0/Microsoft.Bcl.AsyncInterfaces.dll
+DiffServiceTests/bin/Debug/net8.0/Xunit.DependencyInjection.dll
+DiffServiceTests/bin/Debug/net8.0/Xunit.Microsoft.DependencyInjection.dll
+DiffServiceTests/obj/Debug/net8.0/DiffServiceTests.csproj.CopyComplete
+DiffServiceTests/Tests/Fixtures/DiffServiceTestFixture.cs
