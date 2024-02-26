@@ -8,13 +8,11 @@ namespace DiffService.src.DiffService.Api
     [Route("v1/diff")]
     public class DiffController : ControllerBase
     {
-        private readonly Dictionary<string, (byte[], byte[])> dataStore;
         private readonly IDiffService _service;
 
         public DiffController(IDiffService service)
         {
             _service = service;
-            dataStore = _service.DataStore;
         }
 
         [HttpPost]
