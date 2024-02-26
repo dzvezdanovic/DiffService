@@ -25,7 +25,7 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build /DiffService.sln --configuration Release --no-restore
-      - name: Build
+    - name: Build
       run: dotnet build /DiffService.sln --configuration Debug --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
