@@ -20,8 +20,7 @@ namespace DiffService.src.DiffService.Api
         public IActionResult Left(string ID, [FromBody] DiffData diffData)
         {
             var result = _service.Left(ID, diffData);
-            if (result) return StatusCode(201);
-            return BadRequest();
+            return result ? StatusCode(201) : BadRequest();
         }
 
         [HttpPost]
@@ -29,8 +28,7 @@ namespace DiffService.src.DiffService.Api
         public IActionResult Right(string ID, [FromBody] DiffData diffData)
         {
             var result = _service.Right(ID, diffData);
-            if (result) return StatusCode(201);
-            return BadRequest();
+            return result ? StatusCode(201) : BadRequest();
         }
 
         [HttpGet]
@@ -38,8 +36,7 @@ namespace DiffService.src.DiffService.Api
         public IActionResult Diff(string ID)
         {
             var result = _service.Diff(ID);
-
-            return result;
+            return Ok(result);
         }
     }
 }

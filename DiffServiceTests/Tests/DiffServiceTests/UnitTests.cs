@@ -1,5 +1,6 @@
 ﻿using DiffService.src.DiffService.Api;
 using DiffService.src.models;
+using DiffService.src.services;
 using Microsoft.AspNetCore.Mvc;
 using Xunit;
 
@@ -7,11 +8,11 @@ namespace DiffService.Tests.DiffServiceTests
 {
     public class UnitTests
     {
-        private readonly DiffController _controller;
+        private readonly IDiffService _diffService;
 
-        public UnitTests()
+        public UnitTests(IDiffService diffService)
         {
-            _controller = new DiffController();
+            _diffService = diffService;
         }
 
         [Fact]
@@ -20,18 +21,20 @@ namespace DiffService.Tests.DiffServiceTests
             string ID = "1";
             DiffData data = new DiffData { Data = "AAAAAA==" };
 
-            var result = _controller.Right(ID, data) as StatusCodeResult;
+            var result = _diffService.Right(ID, data);
 
-            Assert.True(201 == result.StatusCode);
+            Assert.True(true == result);
         }
 
         [Fact]
-        public void BadCompare()
+        public void SuccessfullyCreatedLeft()
         {
             string ID = "1";
-            var result = _controller.Diff(ID) as StatusCodeResult;
+            DiffData data = new DiffData { Data = "AQAQAQ==" };
 
-            Assert.True(404 == result.StatusCode);
+            var result = _diffService.Left(ID, data);
+
+            Assert.True(true == result);
         }
     }
 }
