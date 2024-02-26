@@ -44,7 +44,7 @@ POST v1/diff/<ID>/left
 {
 "data": "base64_encoded_data"
 }
-
+```
 ### Left Endpoint
 
 Send base64 encoded binary data to the Right Endpoint:
@@ -53,7 +53,7 @@ POST v1/diff/<ID>/right
 {
 "data": "base64_encoded_data"
 }
-
+```
 ### Diff Endpoint
 
 Retrieve comparison results using the Diff Endpoint:
