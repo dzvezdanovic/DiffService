@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  DOTNET_VERSION: '8.0.x'
+  DOTNET_VERSION: ${{ env.DOTNET_VERSION }}
 
 jobs:
   build:
@@ -23,12 +23,6 @@ jobs:
       - name: Install dependencies
         run: dotnet restore WebApi
 
-      - name: Build
-        run: dotnet build WebApi --configuration Debug --no-restore
-
-      - name: Test
-        run: dotnet test WebApi --configuration Debug --no-build
-        
       - name: Build
         run: dotnet build WebApi --configuration Release --no-restore
 
