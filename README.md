@@ -1,5 +1,5 @@
 # DiffService
-Welcome to the Binary Diff Tool, a service that allows you to compare binary data and identify differences between them. This README provides essential information on how to use and integrate the Binary Diff Tool into your projects.
+Welcome to the DiffService, a service that allows you to compare binary data and identify differences between them. This README provides essential information on how to use and integrate the DiffService into your projects.
 
 ## Overview
 
