@@ -1,13 +1,7 @@
-using DiffService;
 using DiffService.src.services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//Prebaci ovde iz startup.cs
-
-
-var startup = new Startup(builder.Configuration);
-startup.ConfigureServices(builder.Services);
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -28,7 +22,11 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+app.UseRouting();
 
-app.MapControllers();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 
 app.Run();

@@ -49,7 +49,7 @@ namespace DiffService.src.services
                 }
                 else
                 {
-                    DataStore[ID] = (value.Item2, data);
+                    DataStore[ID] = (data, value.Item2);
                 }
 
                 return true;
