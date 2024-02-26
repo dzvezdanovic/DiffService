@@ -11,10 +11,12 @@
 using System;
 using System.Reflection;
 
+[assembly: Xunit.TestFramework("Xunit.DependencyInjection.DependencyInjectionTestFramework", "Xunit.DependencyInjection")]
+[assembly: Xunit.DependencyInjection.StartupType("DiffService.Startup")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("DiffService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9268917b08d59c8b86b873d4a449c499ed57a271")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d4ddf2b75ace99e246271be37a685d7b29c4985")]
 [assembly: System.Reflection.AssemblyProductAttribute("DiffService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DiffService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
