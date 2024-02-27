@@ -33,8 +33,4 @@ D:\descartes\DiffService\DiffService\obj\Debug\net8.0\DiffService.genruntimeconf
 D:\descartes\DiffService\DiffService\obj\Debug\net8.0\ref\DiffService.dll
 D:\descartes\DiffService\DiffService\bin\Debug\net8.0\Newtonsoft.Json.dll
 D:\descartes\DiffService\DiffService\bin\Debug\net8.0\Microsoft.AspNetCore.TestHost.dll
-D:\descartes\DiffService\DiffService\bin\Debug\net8.0\xunit.abstractions.dll
-D:\descartes\DiffService\DiffService\bin\Debug\net8.0\xunit.assert.dll
-D:\descartes\DiffService\DiffService\bin\Debug\net8.0\xunit.core.dll
-D:\descartes\DiffService\DiffService\bin\Debug\net8.0\xunit.execution.dotnet.dll
 D:\descartes\DiffService\DiffService\bin\Debug\net8.0\Serilog.dll
