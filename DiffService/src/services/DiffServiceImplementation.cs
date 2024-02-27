@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DiffService.src.services
 {
-    public class DiffServiceImplementation : IDiffService
+    public class DiffServiceImplementation : ControllerBase, IDiffService
     {
         public Dictionary<string, (byte[], byte[])> DataStore { get; set; }
-
-        public DiffServiceImplementation()
+        
+        public DiffServiceImplementation() 
         {
             DataStore = new();
         }
@@ -57,83 +57,67 @@ namespace DiffService.src.services
             catch { return false; }
         }
 
-        public DiffResult Diff(string ID)
+        public IActionResult Diff(string ID)
         {
-            var result = new DiffResult();
-
-            if (!DataStore.TryGetValue(ID, out (byte[], byte[]) value))
+            try
             {
-                result.IsSuccess = false;
-                result.MessageType = "Not Found";
-                return result;
-            }
+                if (!DataStore.TryGetValue(ID, out (byte[], byte[]) value))
+                    return NotFound();
 
-            var leftData = value.Item1;
-            var rightData = value.Item2;
+                var leftData = value.Item1;
+                var rightData = value.Item2;
 
-            if (leftData == null || rightData == null)
-            {
-                result.IsSuccess = false;
-                result.MessageType = "Bad Request";
-                return result;
-            }
+                if (leftData == null || rightData == null)
+                    return BadRequest();
 
-            if (leftData.Length != rightData.Length)
-            {
-                result.IsSuccess = true;
-                result.MessageType = "OK";
-                result.Message = "SizeDoNotMatch";
-                return result;
-            }
+                if (leftData.Length != rightData.Length)
+                    return Ok(new { diffResultType = "SizeDoNotMatch" });
 
-            result.Differences = new List<Difference>();
-            int length = 0;
-            int offset = -1; // Initialize offset to -1 to handle diffs at the beginning of the data
+                var diffs = new List<Difference>();
+                int length = 0;
+                int offset = -1; // Initialize offset to -1 to handle diffs at the beginning of the data
 
-            for (int i = 0; i < leftData.Length; i++)
-            {
-                if (leftData[i] != rightData[i])
+                for (int i = 0; i < leftData.Length; i++)
                 {
-                    if (length == 0)
+                    if (leftData[i] != rightData[i])
                     {
-                        // Start of a new diffs
-                        offset = i;
+                        if (length == 0)
+                        {
+                            // Start of a new diffs
+                            offset = i;
+                        }
+                        length++;
                     }
-                    length++;
+                    else
+                    {
+                        if (length > 0)
+                        {
+                            // End of a difference
+                            diffs.Add(new Difference { Offset = offset, Length = length });
+                            length = 0;
+                        }
+                        offset = -1; // Reset offset
+                    }
                 }
-                else
+
+                if (length > 0)
                 {
-                    if (length > 0)
-                    {
-                        // End of a difference
-                        result.Differences.Add(new Difference { Offset = offset, Length = length });
-                        length = 0;
-                    }
-                    offset = -1; // Reset offset
+                    // If there's a difference at the end of the data
+                    diffs.Add(new Difference { Offset = offset, Length = length });
                 }
-            }
 
-            if (length > 0)
+                if (diffs.Count == 0)
+                {
+                    // If there are no differences
+                    return Ok(new { diffResultType = "Equals" });
+                }
+
+                return Ok(new { diffResultType = "ContentDoNotMatch", diffs });
+            }
+            catch (Exception e)
             {
-                // If there's a difference at the end of the data
-                result.Differences.Add(new Difference { Offset = offset, Length = length });
+                return BadRequest(new { error = e.Message });
             }
-
-            if (result.Differences.Count == 0)
-            {
-                // If there are no differences
-                result.IsSuccess = true;
-                result.Message = "Equals";
-                result.MessageType = "OK";
-
-                return result;
-            }
-
-            result.IsSuccess = true;
-            result.Message = "ContentDoNotMatch";
-            result.MessageType = "OK";
-            result.Differences = result.Differences;
-            return result;
         }
     }
 }
