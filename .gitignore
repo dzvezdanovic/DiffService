@@ -9,3 +9,10 @@ DiffServiceTests/bin/Debug/net8.0/Xunit.DependencyInjection.dll
 DiffServiceTests/bin/Debug/net8.0/Xunit.Microsoft.DependencyInjection.dll
 DiffServiceTests/obj/Debug/net8.0/DiffServiceTests.csproj.CopyComplete
 DiffServiceTests/Tests/Fixtures/DiffServiceTestFixture.cs
+DiffService/obj/Debug/net8.0/DiffService.AssemblyInfo.cs
+DiffService/obj/Debug/net8.0/DiffService.AssemblyInfoInputs.cache
+DiffService/obj/Debug/net8.0/DiffService.assets.cache
+DiffServiceTests/obj/Debug/net8.0/DiffServiceTests.AssemblyInfo.cs
+DiffServiceTests/obj/Debug/net8.0/DiffServiceTests.AssemblyInfoInputs.cache
+DiffServiceTests/obj/Debug/net8.0/DiffServiceTests.assets.cache
+DiffServiceTests/obj/Debug/net8.0/DiffServiceTests.csproj.AssemblyReference.cache
